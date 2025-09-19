@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "starter", "starter", "{5D6F351A-6629-B7F4-AAEF-5AAE92D8C891}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LookupFunction", "starter\Function\LookupFunction.csproj", "{4137EBED-24B9-A002-3384-71D86EAA6D7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4137EBED-24B9-A002-3384-71D86EAA6D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4137EBED-24B9-A002-3384-71D86EAA6D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4137EBED-24B9-A002-3384-71D86EAA6D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4137EBED-24B9-A002-3384-71D86EAA6D7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4137EBED-24B9-A002-3384-71D86EAA6D7C} = {5D6F351A-6629-B7F4-AAEF-5AAE92D8C891}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA94DBFF-9B1D-4825-8254-200F825F9101}
+	EndGlobalSection
+EndGlobal
