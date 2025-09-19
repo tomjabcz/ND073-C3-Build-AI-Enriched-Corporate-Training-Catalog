@@ -1,0 +1,9 @@
+Requirements:
+1.	Users can search Course Data by keywords and phrases from descriptions and other fields and return meaningful results. 
+2.	Users can filter results based on relevant criteria such as course ratings or duration. 
+3.	Own internal training will be included in the search.
+4.	Users can facet information based on relevant fields such as source, skills, or role. 
+5.	Results can be sorted by relevant fields.
+6.	Users can search in pdf articles by keywords and phrases, authors, and their associated institutions
+7.	Users can search in pdf articles using publication name, publisher, and publication date.
+8.	Users should be provided the DOI (Digital Object Identifier) URL for the file as part of the search result. 
