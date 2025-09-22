@@ -3,12 +3,10 @@ import json
 import requests
 import azure.functions as func
 
-API_KEY = "984786fb75a794f12eb02ae472658534" # Open access api
-#API_KEY = "8ff7209a8bd83332257be5c6e57eb74b" # meta api
-SPRINGER_API_ENDPOINT = "https://api.springernature.com/openaccess/json"
+CROSSREF_API_ENDPOINT = "https://api.crossref.org/works"
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info("SpringerLookup: Python HTTP trigger function processed a request.")
+    logging.info("CrossrefLookup: Python HTTP trigger function processed a request.")
 
     try:
         data = req.get_json()
@@ -42,6 +40,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             if article_name:
                 response_record["Data"] = get_entity_metadata(article_name)
         except Exception as e:
+            logging.error(f"Error while fetching Crossref metadata: {e}")
             response_record["Errors"].append({"Message": str(e)})
         finally:
             response["Values"].append(response_record)
@@ -54,6 +53,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 
 def get_entity_metadata(title: str):
+    """
+    Vyhledá článek přes Crossref REST API a vrátí metadata
+    pouze pokud se najde přesná shoda na title (case-insensitive).
+    """
     result = {
         "PublicationName": "",
         "Publisher": "",
@@ -61,15 +64,35 @@ def get_entity_metadata(title: str):
         "PublicationDate": ""
     }
 
-    uri = f"{SPRINGER_API_ENDPOINT}?q=title:\"{title}\"&api_key={API_KEY}"
-    r = requests.get(uri)
-    r.raise_for_status()
+    params = {
+        "query.title": title,
+        "rows": 10
+    }
 
-    springer_results = r.json()
-    for record in springer_results.get("records", []):
-        result["DOI"] = record.get("doi", "")
-        result["PublicationDate"] = record.get("publicationDate", "")
-        result["PublicationName"] = record.get("publicationName", "")
-        result["Publisher"] = record.get("publisher", "")
+    r = requests.get(CROSSREF_API_ENDPOINT, params=params)
+    r.raise_for_status()
+    data = r.json()
+
+    items = data.get("message", {}).get("items", [])
+    for item in items:
+        item_title = " ".join(item.get("title", [])).strip()
+        if item_title.lower() == title.lower():
+            result["DOI"] = item.get("DOI", "")
+            result["PublicationDate"] = item.get("published-online", {}).get("date-parts", [[""]])[0]
+            result["PublicationName"] = item_title
+            result["Publisher"] = item.get("publisher", "")
+            break
 
     return result
+
+
+def parse_crossref_date(item):
+    """
+    Vrátí datum ve formátu YYYY-MM-DD pokud je dostupné,
+    jinak jen YYYY nebo YYYY-MM.
+    """
+    published = item.get("published-print") or item.get("published-online")
+    if published and "date-parts" in published:
+        parts = published["date-parts"]
+        return "-".join(str(p) for p in parts)
+    return ""
