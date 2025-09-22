@@ -54,8 +54,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 def get_entity_metadata(title: str):
     """
-    Vyhledá článek přes Crossref REST API a vrátí metadata
-    pouze pokud se najde přesná shoda na title (case-insensitive).
+    find an article by Crossref REST API and return metadata if there is exact match in title (case-insensitive).
     """
     result = {
         "PublicationName": "",
@@ -84,15 +83,3 @@ def get_entity_metadata(title: str):
             break
 
     return result
-
-
-def parse_crossref_date(item):
-    """
-    Vrátí datum ve formátu YYYY-MM-DD pokud je dostupné,
-    jinak jen YYYY nebo YYYY-MM.
-    """
-    published = item.get("published-print") or item.get("published-online")
-    if published and "date-parts" in published:
-        parts = published["date-parts"]
-        return "-".join(str(p) for p in parts)
-    return ""
