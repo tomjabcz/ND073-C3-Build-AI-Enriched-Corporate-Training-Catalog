@@ -1,0 +1,347 @@
+tomas@MASINA:/mnt/c/Users/tomas/Visual Studio Code Projects/ND073-C3-Build-AI-Enriched-Corporate-Training-Catalog/starter/Function/bin/Debug$ curl "https://tj-ai-search.search.windows.net/indexes/azureblob-index/docs?api-version=2020-06-30&search=%2A&%24select=metadata_author,PublicationNa
+me,Publisher,DOI,PublicationDate"   -H "Content-Type: application/json"   -H "api-key: q8FLmvuw5M3ITIf8sHje9o6NsS03juCaRMPEkxAGNxAzSeBxTGl9" | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  5259    0  5259    0     0   8160      0 --:--:-- --:--:-- --:--:--  8153
+{
+  "@odata.context": "https://tj-ai-search.search.windows.net/indexes('azureblob-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Boping Zhang",
+      "PublicationName": "Augmented reality virtual glasses try-on technology based on iOS platform",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s13640-018-0373-8",
+      "PublicationDate": "2018-11-27T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Tu Nguyen Thi Ngoc ",
+      "PublicationName": "Mining aspects of customer’s review on the social network",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-019-0184-5",
+      "PublicationDate": "2019-02-28T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Sandhya Narayanan ",
+      "PublicationName": "Improving prediction with enhanced Distributed Memory-based Resilient Dataset Filter",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-020-00292-y",
+      "PublicationDate": "2020-02-28T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Rik Das",
+      "PublicationName": "Multi technique amalgamation for enhanced information identification with content based image data",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40064-015-1515-4",
+      "PublicationDate": "2015-12-01T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Ferdousi Sabera Rawnaque ",
+      "PublicationName": "Technological advancements and opportunities in Neuromarketing: a systematic review",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40708-020-00109-x",
+      "PublicationDate": "2020-09-21T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Alina Köchling ",
+      "PublicationName": "Discriminated by an algorithm: a systematic review of discrimination and fairness by algorithmic decision-making in the context of HR recruitment and HR development",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1007/s40685-020-00134-w",
+      "PublicationDate": "2020-11-20T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Tuba Parlar ",
+      "PublicationName": "QER: a new feature selection method for sentiment analysis",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s13673-018-0135-8",
+      "PublicationDate": "2018-05-09T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Muhammad Taimoor Khan",
+      "PublicationName": "Sentiment analysis and the complex natural language",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40294-016-0016-9",
+      "PublicationDate": "2016-02-03T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "P. Ram Mohan Rao ",
+      "PublicationName": "Privacy preservation techniques in big data analytics: a survey",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-018-0141-8",
+      "PublicationDate": "2018-09-22T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Chunyong Yin ",
+      "PublicationName": "Mobile marketing recommendation method based on user location feedback",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s13673-019-0177-6",
+      "PublicationDate": "2019-05-01T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": " Shun Kodate ",
+      "PublicationName": "Detecting problematic transactions in a consumer-to-consumer e-commerce network",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1007/s41109-020-00330-x",
+      "PublicationDate": "2020-11-16T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Haoliang Cui",
+      "PublicationName": "A classification method for social information of sellers on social network",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s13640-020-00545-z",
+      "PublicationDate": "2021-01-14T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Taiwo Kolajo ",
+      "PublicationName": "Big data stream analysis: a systematic literature review",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-019-0210-7",
+      "PublicationDate": "2019-06-06T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Iqbal H. Sarker ",
+      "PublicationName": "Context-aware rule learning from smartphone data: survey, challenges and future directions",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-019-0258-4",
+      "PublicationDate": "2019-10-31T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": null,
+      "PublicationName": null,
+      "Publisher": null,
+      "DOI": null,
+      "PublicationDate": null
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Zengda Guan",
+      "PublicationName": "Local regression transfer learning with applications to users’ psychological characteristics prediction",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1007/s40708-015-0017-z",
+      "PublicationDate": "2015-08-14T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": null,
+      "PublicationName": null,
+      "Publisher": null,
+      "DOI": null,
+      "PublicationDate": null
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Administrator",
+      "PublicationName": "",
+      "Publisher": "",
+      "DOI": "",
+      "PublicationDate": "1900-01-01T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": null,
+      "PublicationName": null,
+      "Publisher": null,
+      "DOI": null,
+      "PublicationDate": null
+    },
+    {
+      "@search.score": 1.0,
+      "metadata_author": "Partheeban Chandrasekaran",
+      "PublicationName": "Toward a testbed for evaluating computational trust models: experiments and analysis",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40493-015-0019-z",
+      "PublicationDate": "2015-09-07T00:00:00Z"
+    }
+  ]
+}
+
+
+
+tomas@MASINA:/mnt/c/Users/tomas/Visual Studio Code Projects/ND073-C3-Build-AI-Enriched-Corporate-Training-Catalog/starter/Function/bin/Debug$ curl "https://tj-ai-search.search.windows.net/indexes/azureblob-index/docs?api-version=2020-06-30&search=computer&%24select=metadata_author,Publicat
+ionName,Publisher,DOI,PublicationDate"   -H "Content-Type: application/json"   -H "api-key: q8FLmvuw5M3ITIf8sHje9o6NsS03juCaRMPEkxAGNxAzSeBxTGl9"
+ | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  5381    0  5381    0     0   8714      0 --:--:-- --:--:-- --:--:--  8721
+{
+  "@odata.context": "https://tj-ai-search.search.windows.net/indexes('azureblob-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 2.9322374,
+      "metadata_author": "P. Ram Mohan Rao ",
+      "PublicationName": "Privacy preservation techniques in big data analytics: a survey",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-018-0141-8",
+      "PublicationDate": "2018-09-22T00:00:00Z"
+    },
+    {
+      "@search.score": 1.7401541,
+      "metadata_author": "Administrator",
+      "PublicationName": "",
+      "Publisher": "",
+      "DOI": "",
+      "PublicationDate": "1900-01-01T00:00:00Z"
+    },
+    {
+      "@search.score": 1.7053902,
+      "metadata_author": null,
+      "PublicationName": null,
+      "Publisher": null,
+      "DOI": null,
+      "PublicationDate": null
+    },
+    {
+      "@search.score": 1.6147543,
+      "metadata_author": "Boping Zhang",
+      "PublicationName": "Augmented reality virtual glasses try-on technology based on iOS platform",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s13640-018-0373-8",
+      "PublicationDate": "2018-11-27T00:00:00Z"
+    },
+    {
+      "@search.score": 1.6011381,
+      "metadata_author": "Alina Köchling ",
+      "PublicationName": "Discriminated by an algorithm: a systematic review of discrimination and fairness by algorithmic decision-making in the context of HR recruitment and HR development",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1007/s40685-020-00134-w",
+      "PublicationDate": "2020-11-20T00:00:00Z"
+    },
+    {
+      "@search.score": 1.573503,
+      "metadata_author": "Chunyong Yin ",
+      "PublicationName": "Mobile marketing recommendation method based on user location feedback",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s13673-019-0177-6",
+      "PublicationDate": "2019-05-01T00:00:00Z"
+    },
+    {
+      "@search.score": 1.5079439,
+      "metadata_author": "Iqbal H. Sarker ",
+      "PublicationName": "Context-aware rule learning from smartphone data: survey, challenges and future directions",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-019-0258-4",
+      "PublicationDate": "2019-10-31T00:00:00Z"
+    },
+    {
+      "@search.score": 1.3620021,
+      "metadata_author": "Sandhya Narayanan ",
+      "PublicationName": "Improving prediction with enhanced Distributed Memory-based Resilient Dataset Filter",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-020-00292-y",
+      "PublicationDate": "2020-02-28T00:00:00Z"
+    },
+    {
+      "@search.score": 1.2515974,
+      "metadata_author": "Partheeban Chandrasekaran",
+      "PublicationName": "Toward a testbed for evaluating computational trust models: experiments and analysis",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40493-015-0019-z",
+      "PublicationDate": "2015-09-07T00:00:00Z"
+    },
+    {
+      "@search.score": 1.0810864,
+      "metadata_author": "Taiwo Kolajo ",
+      "PublicationName": "Big data stream analysis: a systematic literature review",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-019-0210-7",
+      "PublicationDate": "2019-06-06T00:00:00Z"
+    },
+    {
+      "@search.score": 0.9852197,
+      "metadata_author": "Ferdousi Sabera Rawnaque ",
+      "PublicationName": "Technological advancements and opportunities in Neuromarketing: a systematic review",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40708-020-00109-x",
+      "PublicationDate": "2020-09-21T00:00:00Z"
+    },
+    {
+      "@search.score": 0.89712405,
+      "metadata_author": "Rik Das",
+      "PublicationName": "Multi technique amalgamation for enhanced information identification with content based image data",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40064-015-1515-4",
+      "PublicationDate": "2015-12-01T00:00:00Z"
+    },
+    {
+      "@search.score": 0.8239218,
+      "metadata_author": " Shun Kodate ",
+      "PublicationName": "Detecting problematic transactions in a consumer-to-consumer e-commerce network",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1007/s41109-020-00330-x",
+      "PublicationDate": "2020-11-16T00:00:00Z"
+    },
+    {
+      "@search.score": 0.62555736,
+      "metadata_author": "Tu Nguyen Thi Ngoc ",
+      "PublicationName": "Mining aspects of customer’s review on the social network",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40537-019-0184-5",
+      "PublicationDate": "2019-02-28T00:00:00Z"
+    },
+    {
+      "@search.score": 0.5445646,
+      "metadata_author": null,
+      "PublicationName": null,
+      "Publisher": null,
+      "DOI": null,
+      "PublicationDate": null
+    },
+    {
+      "@search.score": 0.5409225,
+      "metadata_author": "Zengda Guan",
+      "PublicationName": "Local regression transfer learning with applications to users’ psychological characteristics prediction",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1007/s40708-015-0017-z",
+      "PublicationDate": "2015-08-14T00:00:00Z"
+    },
+    {
+      "@search.score": 0.4456374,
+      "metadata_author": "Haoliang Cui",
+      "PublicationName": "A classification method for social information of sellers on social network",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s13640-020-00545-z",
+      "PublicationDate": "2021-01-14T00:00:00Z"
+    },
+    {
+      "@search.score": 0.4250276,
+      "metadata_author": "Tuba Parlar ",
+      "PublicationName": "QER: a new feature selection method for sentiment analysis",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s13673-018-0135-8",
+      "PublicationDate": "2018-05-09T00:00:00Z"
+    },
+    {
+      "@search.score": 0.3987537,
+      "metadata_author": null,
+      "PublicationName": null,
+      "Publisher": null,
+      "DOI": null,
+      "PublicationDate": null
+    },
+    {
+      "@search.score": 0.19392826,
+      "metadata_author": "Muhammad Taimoor Khan",
+      "PublicationName": "Sentiment analysis and the complex natural language",
+      "Publisher": "Springer Science and Business Media LLC",
+      "DOI": "10.1186/s40294-016-0016-9",
+      "PublicationDate": "2016-02-03T00:00:00Z"
+    }
+  ]
+}
+
+
+

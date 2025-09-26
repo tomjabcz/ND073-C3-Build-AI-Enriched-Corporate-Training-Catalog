@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Training Search Site</title>
+    <meta name="description" content="Training Search Site">
+    <meta name="author" content="Udacity">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+
+    <!-- Vue.js 2.x (kompatibilní s Buefy 0.9.x) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <!-- Buefy 0.9.22 (kompatibilní s Vue 2) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/buefy@0.9.22/dist/buefy.min.css">
+    <script src="https://unpkg.com/buefy@0.9.22/dist/buefy.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-body">
+                <p class="title">
+                    Corporate Training Catalog
+                </p>
+                <p class="subtitle">
+                    Learn, build, and grow with our resources
+                </p>
+            </div>
+        </section>
+
+        <div id="search-app">
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Search for</label>
+                        <input v-model="searchTerm" placeholder="Search for" class="input">
+                    </div>
+                    <div class="field">
+                        <button v-on:click="doSearch" class="button is-link">Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <b-field label="Filter on rating">
+                    <b-slider :min="0" :max="1" step="0.1" v-model="rating_average" v-on:change="doSearch">
+                        <template v-for="val in [0, 0.2, 0.4, 0.6, 0.8, 1]">
+                            <b-slider-tick :value="val" :key="val">{{ val }}</b-slider-tick>
+                        </template>
+                    </b-slider>
+                </b-field>
+            </div>
+
+            <div class="block">
+                <b-checkbox v-for="facet in availableFacets"
+                    v-bind:native-value="facet.value"
+                    v-model="myfacets"
+                    @change.native="doRefresh($event)">
+                    {{facet.value}} ({{facet.count}})
+                </b-checkbox>
+            </div>
+
+            <div v-if="results && results.length > 0">
+                <div v-for="course in results" class="block">
+                    <div class="block mb-0">
+                        <div class="is-size-4">{{course.title}}</div>
+                    </div>
+                    <div class="block mt-0">
+                        <div class="is-size-5">{{course.summary}}</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-2">
+                            Product: {{course.product}}<br/>
+                            Level: {{course.level}}<br/>
+                            Role: {{course.role}}
+                        </div>
+                        <div class="column is-2">
+                            Duration: {{course.duration}}
+                        </div>
+                        <div class="column is-2">
+                            Rating: {{course.rating_average}}<br/>
+                            Rating Count: {{course.rating_count}}
+                        </div>
+                    </div>            
+                    <hr/>
+                </div>
+            </div>
+
+            <div v-else-if="results && results.length === 0">
+                <b-message type="is-warning" has-icon>
+                    No results found for your search.
+                </b-message>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const opts = {
+            headers: {'Content-Type': 'application/json', 'api-key':'q8FLmvuw5M3ITIf8sHje9o6NsS03juCaRMPEkxAGNxAzSeBxTGl9'}
+        }
+        const serviceUrl = 'https://tj-ai-search.search.windows.net'
+
+        new Vue({
+            el: '#search-app',
+            data () {
+                return {
+                    results: null,
+                    searchTerm: 'azure',
+                    rating_average: 0,
+                    availableFacets: [],
+                    myfacets: []
+                }
+            },
+            methods: {
+                doSearch: function(){
+                    axios
+                        .get(`${this.baseUrl}&search=${encodeURIComponent(this.searchTerm)}&${this.filter}&facet=level`, opts)
+                        .then(response => {
+                            this.results = response.data.value; 
+                            this.availableFacets = response.data['@search.facets'].level;
+                        })
+                        .catch(error => {
+                            console.error("Search error:", error);
+                            this.results = [];
+                        });
+                },
+                doRefresh: function(){
+                    axios
+                        .get(`${this.baseUrl}&search=${encodeURIComponent(this.searchTerm)}&${this.filter}`, opts)
+                        .then(response => {
+                            this.results = response.data.value; 
+                        })
+                        .catch(error => {
+                            console.error("Refresh error:", error);
+                            this.results = [];
+                        });
+                }
+            },
+            computed:{
+                filter: function(){
+                    let f = `$filter=rating_average ge ${this.rating_average}`;
+                    if(this.myfacets && this.myfacets.length > 0){
+                        f += ` and search.in(level, '${this.myfacets.join('|')}' ,'|')`;
+                    }
+                    return f;
+                },
+                baseUrl: function(){
+                    return `${serviceUrl}/indexes/azuretable-index-new/docs?api-version=2020-06-30`
+                }
+            },
+            mounted() {
+                // Pro testování automaticky spustíme search=*
+                this.searchTerm = "*";
+                this.doSearch();
+            }
+        })
+    </script>
+</body>
+</html>
+</html>

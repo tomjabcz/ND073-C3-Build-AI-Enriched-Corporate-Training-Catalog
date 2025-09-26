@@ -1,0 +1,93 @@
+{
+  "@odata.context": "https://tj-ai-search.search.windows.net/$metadata#indexers/$entity",
+  "@odata.etag": "\"0x8DDFC7E8D0B01A2\"",
+  "name": "azureblob-indexer",
+  "description": "",
+  "dataSourceName": "azureblob-1757788247798-datasource",
+  "skillsetName": "azureblob-skillset",
+  "targetIndexName": "azureblob-index",
+  "disabled": null,
+  "schedule": null,
+  "parameters": {
+    "batchSize": null,
+    "maxFailedItems": 0,
+    "maxFailedItemsPerBatch": 0,
+    "configuration": {
+      "imageAction": "generateNormalizedImages",
+      "dataToExtract": "contentAndMetadata",
+      "parsingMode": "default",
+      "allowSkillsetToReadFileData": true
+    }
+  },
+  "fieldMappings": [
+    {
+      "sourceFieldName": "metadata_storage_path",
+      "targetFieldName": "metadata_storage_path",
+      "mappingFunction": {
+        "name": "base64Encode",
+        "parameters": {
+          "useHttpServerUtilityUrlTokenEncode": false
+        }
+      }
+    }
+  ],
+  "outputFieldMappings": [
+    {
+      "sourceFieldName": "/document/merged_content/locations",
+      "targetFieldName": "locations",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/merged_content/organizations",
+      "targetFieldName": "organizations",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/merged_content/people",
+      "targetFieldName": "people",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/merged_content/keyphrases",
+      "targetFieldName": "keyphrases",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/merged_content",
+      "targetFieldName": "merged_content",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/normalized_images/*/text",
+      "targetFieldName": "text",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/normalized_images/*/layoutText",
+      "targetFieldName": "layoutText",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/PublicationName",
+      "targetFieldName": "PublicationName",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/Publisher",
+      "targetFieldName": "Publisher",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/DOI",
+      "targetFieldName": "DOI",
+      "mappingFunction": null
+    },
+    {
+      "sourceFieldName": "/document/PublicationDate",
+      "targetFieldName": "PublicationDate",
+      "mappingFunction": null
+    }
+  ],
+  "cache": null,
+  "encryptionKey": null
+}

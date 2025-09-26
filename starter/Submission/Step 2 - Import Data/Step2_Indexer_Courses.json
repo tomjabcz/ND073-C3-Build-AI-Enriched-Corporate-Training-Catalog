@@ -1,0 +1,27 @@
+{
+  "@odata.context": "https://tj-ai-search.search.windows.net/$metadata#indexers/$entity",
+  "@odata.etag": "\"0x8DDF7C61DC0F651\"",
+  "name": "azuretable-indexer-new",
+  "description": "",
+  "dataSourceName": "azuretable-1757792458466-datasource",
+  "skillsetName": "instructor-bio",
+  "targetIndexName": "azuretable-index-new",
+  "disabled": null,
+  "schedule": null,
+  "parameters": {
+    "batchSize": null,
+    "maxFailedItems": 0,
+    "maxFailedItemsPerBatch": 0,
+    "configuration": {}
+  },
+  "fieldMappings": [],
+  "outputFieldMappings": [
+    {
+      "sourceFieldName": "/document/instructor_bio",
+      "targetFieldName": "instructor_bio",
+      "mappingFunction": null
+    }
+  ],
+  "cache": null,
+  "encryptionKey": null
+}

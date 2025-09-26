@@ -1,0 +1,238 @@
+tomas@MASINA:/mnt/c/Users/tomas/Visual Studio Code Projects/ND073-C3-Build-AI-Enriched-Corporate-Training-Catalog/starter/Function/bin/Debug$ curl "https://tj-ai-search.search.windows.net/indexes/azuretable-index-new/docs?api-version=2020-06-30&search=%2A&%24facet=source&%24top=10" \
+  -H "Content-Type: application/json" \
+  -H "api-key: q8FLmvuw5M3ITIf8sHje9o6NsS03juCaRMPEkxAGNxAzSeBxTGl9" | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  6845    0  6845    0     0  10937      0 --:--:-- --:--:-- --:--:-- 10934
+{
+  "@odata.context": "https://tj-ai-search.search.windows.net/indexes('azuretable-index-new')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "0479d887-32ce-477b-b184-9230e096562a",
+      "Timestamp": "2025-09-19T19:12:32.421Z",
+      "Key": "ms-learn0479d887-32ce-477b-b184-9230e096562a",
+      "description": "Get started with AI on Azure",
+      "duration": "34",
+      "instructor": null,
+      "rating_average": 4.78,
+      "rating_count": 10997,
+      "role": "data-scientist",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/?WT.mc_id=api_CatalogApi",
+      "title": "Get started with AI on Azure",
+      "level": "beginner",
+      "product": "azure-machine-learning",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "04e41100-803a-4534-b5fa-b4ac370d2d06",
+      "Timestamp": "2025-09-19T19:12:31.684Z",
+      "Key": "ms-learn04e41100-803a-4534-b5fa-b4ac370d2d06",
+      "description": "Implement a CI/CD pipeline for multiple containers to Kubernetes.",
+      "duration": "56",
+      "instructor": null,
+      "rating_average": 4.7,
+      "rating_count": 401,
+      "role": "devops-engineer",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/deploy-kubernetes/?WT.mc_id=api_CatalogApi",
+      "title": "Automate multi-container Kubernetes deployments with Azure Pipelines",
+      "level": "beginner",
+      "product": "azure",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "04fb69f0-8201-4d9e-a8ac-2fa30de7bff5",
+      "Timestamp": "2025-09-19T19:12:30.672Z",
+      "Key": "ms-learn04fb69f0-8201-4d9e-a8ac-2fa30de7bff5",
+      "description": "DevOps is the union of people, process, and products to enable continuous delivery of value to our end users. Discover the first two foundation pillars of DevOps: Culture and Lean Product.",
+      "duration": "25",
+      "instructor": null,
+      "rating_average": 4.69,
+      "rating_count": 3395,
+      "role": "business-user",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/introduce-foundation-pillars-devops/?WT.mc_id=api_CatalogApi",
+      "title": "Introduce the foundation pillars of DevOps: Culture and Lean Product",
+      "level": "beginner",
+      "product": "azure",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "057dd8cb-9502-4710-acf1-3c5d76b3addf",
+      "Timestamp": "2025-09-19T19:12:31.691Z",
+      "Key": "ms-learn057dd8cb-9502-4710-acf1-3c5d76b3addf",
+      "description": "Implement a CI/CD pipeline for Python.",
+      "duration": "46",
+      "instructor": null,
+      "rating_average": 4.78,
+      "rating_count": 144,
+      "role": "devops-engineer",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/deploy-python/?WT.mc_id=api_CatalogApi",
+      "title": "Automate Python deployments with Azure Pipelines",
+      "level": "beginner",
+      "product": "azure-devops",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "058f6f58-26cc-4826-b80c-82eeb1471d46",
+      "Timestamp": "2025-09-19T19:12:30.968Z",
+      "Key": "ms-learn058f6f58-26cc-4826-b80c-82eeb1471d46",
+      "description": "Learn to manage a successful InnerSource program on GitHub through effective discoverability, guidance, and maintenance.",
+      "duration": "50",
+      "instructor": null,
+      "rating_average": 4.75,
+      "rating_count": 247,
+      "role": "devops-engineer",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/manage-innersource-program-github/?WT.mc_id=api_CatalogApi",
+      "title": "Manage an InnerSource program by using GitHub",
+      "level": "beginner",
+      "product": "github",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "086d20fa-85e6-4e95-a6fe-e95b525af326",
+      "Timestamp": "2025-09-19T19:12:32.044Z",
+      "Key": "ms-learn086d20fa-85e6-4e95-a6fe-e95b525af326",
+      "description": "Explore the first two capabilities in the DevOps taxonomy, Continuous Planning and Continuous Integration.",
+      "duration": "22",
+      "instructor": null,
+      "rating_average": 4.73,
+      "rating_count": 2061,
+      "role": "developer",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/analyze-devops-continuous-planning-intergration/?WT.mc_id=api_CatalogApi",
+      "title": "Analyze DevOps Continuous Planning and Continuous Integration",
+      "level": "beginner",
+      "product": "azure",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "09868c55-2b87-476f-9188-706b9363bd63",
+      "Timestamp": "2025-09-19T19:12:33.095Z",
+      "Key": "ms-learn09868c55-2b87-476f-9188-706b9363bd63",
+      "description": "Learn how infrastructure as code enables you to describe and automatically provision the infrastructure that you need for your application.",
+      "duration": "122",
+      "instructor": null,
+      "rating_average": 4.69,
+      "rating_count": 450,
+      "role": "developer",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/provision-infrastructure-azure-pipelines/?WT.mc_id=api_CatalogApi",
+      "title": "Provision infrastructure in Azure Pipelines",
+      "level": "intermediate",
+      "product": "azure",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "0a8435c6-d92c-4cb0-8347-5efb101113af",
+      "Timestamp": "2025-09-19T19:12:30.233Z",
+      "Key": "ms-learn0a8435c6-d92c-4cb0-8347-5efb101113af",
+      "description": "Azure Pipelines help automate building, deploying, and maintaining your applications. While they support a wide range of platforms and programming languages, in this module you’ll focus on using them to implement ASP.NET apps on Azure App Service Web Apps with Azure SQL Database as their data store.",
+      "duration": "65",
+      "instructor": null,
+      "rating_average": 4.85,
+      "rating_count": 13,
+      "role": "solution-architect",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/deploy-aspnet-apps-azure-app-service-pipelines/?WT.mc_id=api_CatalogApi",
+      "title": "Deploy ASP.NET web apps with Azure Pipelines",
+      "level": "intermediate",
+      "product": "azure",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "0c2271ab-0d8d-444f-b1f6-246ac13ab9ef",
+      "Timestamp": "2025-09-19T19:12:32.427Z",
+      "Key": "ms-learn0c2271ab-0d8d-444f-b1f6-246ac13ab9ef",
+      "description": "Learn how to contribute to an open-source project on GitHub.",
+      "duration": "27",
+      "instructor": null,
+      "rating_average": 4.88,
+      "rating_count": 59,
+      "role": "security-engineer",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/contribute-open-source/?WT.mc_id=api_CatalogApi",
+      "title": "Contribute to an open-source project on GitHub",
+      "level": "beginner",
+      "product": "github",
+      "instructor_bio": ""
+    },
+    {
+      "@search.score": 1.0,
+      "PartitionKey": "ms-learn",
+      "RowKey": "0f460de3-a64b-4208-a082-58467b6d0349",
+      "Timestamp": "2025-09-19T19:12:33.377Z",
+      "Key": "ms-learn0f460de3-a64b-4208-a082-58467b6d0349",
+      "description": "Learn the basics of receipt processing in AI Builder and how it can benefit your organization.",
+      "duration": "12",
+      "instructor": null,
+      "rating_average": 4.79,
+      "rating_count": 208,
+      "role": "administrator",
+      "source": "MS Learn",
+      "url": "https://docs.microsoft.com/en-us/learn/modules/ai-builder-receipt-processing/?WT.mc_id=api_CatalogApi",
+      "title": "Get started with receipt processing in AI Builder",
+      "level": "beginner",
+      "product": "power-platform",
+      "instructor_bio": ""
+    }
+  ]
+}
+
+tomas@MASINA:/mnt/c/Users/tomas/Visual Studio Code Projects/ND073-C3-Build-AI-Enriched-Corporate-Training-Catalog/starter/Function/bin/Debug$ curl "https://tj-ai-search.search.windows.net/indexes/azuretable-index-new/docs?api-version=2020-06-30&search=eileen&%24select=instructor,instructor_bio"   -H "Content-Type: application/json"   -H "api-key: q8FLmvuw5M3ITIf8sHje9o6NsS03juCaRMPEkxAGNxAzSeBxTGl9" | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1372    0  1372    0     0   2521      0 --:--:-- --:--:-- --:--:--  2522
+{
+  "@odata.context": "https://tj-ai-search.search.windows.net/indexes('azuretable-index-new')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 1.5269485,
+      "instructor": "Eileen Diaz",
+      "instructor_bio": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+    },
+    {
+      "@search.score": 1.4275615,
+      "instructor": "Eileen Diaz",
+      "instructor_bio": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+    },
+    {
+      "@search.score": 1.4275615,
+      "instructor": "Eileen Diaz",
+      "instructor_bio": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+    },
+    {
+      "@search.score": 0.41386083,
+      "instructor": "Eileen Diaz",
+      "instructor_bio": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+    },
+    {
+      "@search.score": 0.41386083,
+      "instructor": "Eileen Diaz",
+      "instructor_bio": "Eileen is our Senior Security Engineer responsible for application and service security. She has been with the company for 9 years and enjoys writing Sci-Fi in her spare time."
+    }
+  ]
+}
+
+

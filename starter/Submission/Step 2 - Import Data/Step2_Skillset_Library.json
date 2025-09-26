@@ -1,0 +1,163 @@
+{
+  "@odata.etag": "\"0x8DDFC767DBE5576\"",
+  "name": "azureblob-skillset",
+  "description": "Skillset created from the portal. skillsetName: azureblob-skillset; contentField: merged_content; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Text.V3.EntityRecognitionSkill",
+      "name": "#1",
+      "context": "/document/merged_content",
+      "categories": [
+        "Address",
+        "IPAddress",
+        "Skill",
+        "DateTime",
+        "Location",
+        "Event",
+        "URL",
+        "Email",
+        "PhoneNumber",
+        "Organization",
+        "Product",
+        "Person",
+        "PersonType",
+        "Quantity"
+      ],
+      "defaultLanguageCode": "en",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/merged_content",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "locations",
+          "targetName": "locations"
+        },
+        {
+          "name": "organizations",
+          "targetName": "organizations"
+        },
+        {
+          "name": "persons",
+          "targetName": "people"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+      "name": "#2",
+      "context": "/document/merged_content",
+      "defaultLanguageCode": "en",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/merged_content",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "keyPhrases",
+          "targetName": "keyphrases"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.MergeSkill",
+      "name": "#3",
+      "context": "/document",
+      "insertPreTag": " ",
+      "insertPostTag": " ",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/content",
+          "inputs": []
+        },
+        {
+          "name": "itemsToInsert",
+          "source": "/document/normalized_images/*/text",
+          "inputs": []
+        },
+        {
+          "name": "offsets",
+          "source": "/document/normalized_images/*/contentOffset",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mergedText",
+          "targetName": "merged_content"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Vision.OcrSkill",
+      "name": "#4",
+      "context": "/document/normalized_images/*",
+      "lineEnding": "Space",
+      "defaultLanguageCode": "en",
+      "detectOrientation": true,
+      "inputs": [
+        {
+          "name": "image",
+          "source": "/document/normalized_images/*",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "targetName": "text"
+        },
+        {
+          "name": "layoutText",
+          "targetName": "layoutText"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+      "name": "CrossrefLookupSkill",
+      "description": "Custom skill to lookup academic article metadata from Crossref API",
+      "context": "/document",
+      "uri": "https://tomjab-blob-function.azurewebsites.net/api/LookupFunction",
+      "httpMethod": "POST",
+      "timeout": "PT1M30S",
+      "batchSize": 5,
+      "degreeOfParallelism": 1,
+      "inputs": [
+        {
+          "name": "ArticleName",
+          "source": "/document/metadata_title",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "PublicationName",
+          "targetName": "PublicationName"
+        },
+        {
+          "name": "Publisher",
+          "targetName": "Publisher"
+        },
+        {
+          "name": "DOI",
+          "targetName": "DOI"
+        },
+        {
+          "name": "PublicationDate",
+          "targetName": "PublicationDate"
+        }
+      ],
+      "httpHeaders": {
+        "x-functions-key": "pI1Fx5ba9opwnvVOV00g76alPXyPrII7Dj4xHlI1LMCHAzFutKaBdg=="
+      }
+    }
+  ]
+}
